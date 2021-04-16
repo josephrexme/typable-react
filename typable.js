@@ -33,15 +33,24 @@ export default function typed(component, types) {
   component.types = types
 
   for (let propType in types) {
-    if(!basicTypeList.includes(propType.type) || !advancedTypeList.includes(propType.type)) {
+    if(typeof propType.type === 'string' && !basicTypeList.includes(propType.type)) {
       throw new Error(`${propType.type} is not a valid prop-type. See allowed types at https://github.com/facebook/prop-types`)
     }
-    if(!advancedTypeList.includes(propType.type)) {
+    if(propType.type.name && !advancedTypeList.includes(propType.type.name)) {
+      throw new Error(`${propType.type} is not a valid prop-type. See allowed types at https://github.com/facebook/prop-types`)
+    }
+    /*
+    * When it is a qualified basic type string
+    */
+    if(typeof propType.type === 'string') {
       component.propTypes[propType] = toPropTyped(types[propType])
       continue
     }
 
-    switch (propType.type) {
+    /*
+    * Handle advance types
+    */
+    switch (propType.type.name) {
       case 'arrayOf': {
         const propTyped = propType.params.map(paramType => toPropTyped(types[paramType]))
         component.propTypes[propType] = PropTypes[types[propType.type]](...propTyped)
@@ -80,6 +89,17 @@ export default function typed(component, types) {
       }
     }
 
+  }
+}
+
+basicTypeList.forEach(type => {
+  typed[type] = type
+})
+
+typed.arrayOf = type => {
+  return {
+    name: 'arrayOf',
+    childType: type
   }
 }
 
