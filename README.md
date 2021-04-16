@@ -1,5 +1,7 @@
 ## Typable React
 
+PropTypes for documentation authors.
+
 Typable is a [React PropTypes][1] wrapper that allows for easy extraction of your type metadata.
 
 ### WHY?
@@ -15,6 +17,7 @@ npm i typable-react
 ```
 
 ## Usage
+Type your components like this instead of using propTypes. This will implicitly apply propTypes
 
 ```jsx
 import typed from 'typable-react'
@@ -34,6 +37,25 @@ typed(MyComponent, {
     description: 'The number of bananas I ate'
   },
 })
+```
+
+When you need to extract the type metadata for documentation, it's all available at `MyComponent.types`.
+
+```js
+console.log(MyComponent.types)
+/*
+ {
+   name: {
+     type: 'string',
+     required: true,
+     description: 'The name to be greeted'
+   },
+   bananaCount: {
+     type: 'number',
+     description: 'The number of bananas I ate'
+   }
+ }
+*/
 ```
 
 [1]: https://github.com/facebook/prop-types
