@@ -28,12 +28,12 @@ export default function MyComponent({ name, bananaCount }) {
 
 typed(MyComponent, {
   name: {
-    type: typable.string,
+    type: typed.string,
     required: true,
     description: 'The name to be greeted'
   },
   bananaCount: {
-    type: typable.number,
+    type: typed.number,
     description: 'The number of bananas I ate'
   },
 })
