@@ -1,0 +1,30 @@
+{
+  "name": "typable-react",
+  "version": "0.0.1",
+  "description": "React.js prop-types wrapper for easy extraction",
+  "main": "typable.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephrexme/typable-react.git"
+  },
+  "keywords": [
+    "static",
+    "typed",
+    "prop-types"
+  ],
+  "author": "Joseph Rex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josephrexme/typable-react/issues"
+  },
+  "homepage": "https://github.com/josephrexme/typable-react#readme",
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
