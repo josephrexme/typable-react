@@ -1,14 +1,8 @@
-## Typable React
+# Typable React
 
 PropTypes for documentation authors.
 
 Typable is a [React PropTypes][1] wrapper that allows for easy extraction of your type metadata.
-
-### WHY?
-PropTypes is great for regular use but when building components that need to be documented, it
-does not give any information about the prop types that can be easily extracted into the
-documentation. Documentation tools currently use [react-docgen][2] or similar implementation
-to extract by reading the entire source file to parse PropTypes syntax. This is not always straightforward to use as it may require raw loading components to be parsed as strings.
 
 ## Installation
 
@@ -58,5 +52,16 @@ console.log(MyComponent.types)
 */
 ```
 
+### WHY?
+PropTypes is great for regular use but when building components that need to be documented, it
+does not give any information about the prop types that can be easily extracted into the
+documentation. Documentation tools currently use [react-docgen][2] or similar implementation
+to extract by reading the entire source file to parse PropTypes syntax. This is not always straightforward to use as it may require raw loading components to be parsed as strings.
+
+## LICENSE
+
+typable-react is MIT licensed. [Read details][3]
+
 [1]: https://github.com/facebook/prop-types
 [2]: https://github.com/reactjs/react-docgen/
+[3]: https://github.com/josephrexme/typable-react/blob/main/LICENSE

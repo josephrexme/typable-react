@@ -48,7 +48,7 @@ export default function typed(component, types) {
     }
 
     /*
-    * Handle advance types
+    * Handle advanced types
     */
     switch (propType.type.name) {
       case 'arrayOf': {
@@ -96,10 +96,9 @@ basicTypeList.forEach(type => {
   typed[type] = type
 })
 
-typed.arrayOf = type => {
-  return {
-    name: 'arrayOf',
-    childType: type
-  }
-}
-
+advancedTypeList.forEach(type => {
+  typed[type] = params => ({
+    name: type,
+    params
+  })
+})
