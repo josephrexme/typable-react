@@ -32,10 +32,12 @@ typed(MyComponent, {
   },
   fruitCount: {
     type: typed.number,
+    default: 0,
     description: 'The number of fruit eaten'
   },
   fruit: {
     type: typed.oneOf(['bananas', 'mangoes']),
+    default: 'bananas',
     description: 'The number of fruit eaten'
   },
 })
@@ -54,14 +56,30 @@ console.log(MyComponent.types)
   },
   fruitCount: {
     type: 'number',
+    default: 0,
     description: 'The number of fruit eaten'
   },
   fruit: {
     type: { name: 'oneOf', params: ['bananas', 'mangoes'] },
+    default: 'bananas',
     description: 'The number of fruit eaten'
   },
  }
 */
+```
+and your installed version of [prop-types][1] is applied
+
+```js
+MyComponent.propTypes = {
+  name: PropTypes.string.isRequired,
+  fruitCount: PropTypes.number,
+  fruit: PropTypes.oneOf(['bananas', 'mangoes'])
+}
+
+MyComponent.defaultProps = {
+  fruitCount: 0,
+  fruit: 'bananas'
+}
 ```
 
 ### WHY?

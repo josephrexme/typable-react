@@ -1,7 +1,7 @@
 {
   "name": "typable-react",
-  "version": "0.0.3",
-  "description": "React.js prop-types wrapper for easy extraction",
+  "version": "0.0.4",
+  "description": "React.js prop-types wrapper for easy extraction to documentation",
   "main": "typable.js",
   "scripts": {
     "test": "jest"
@@ -13,7 +13,10 @@
   "keywords": [
     "static",
     "typed",
-    "prop-types"
+    "prop-types",
+    "react",
+    "extract",
+    "documentation"
   ],
   "author": "Joseph Rex",
   "license": "MIT",
