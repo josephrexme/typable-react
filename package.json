@@ -1,6 +1,6 @@
 {
   "name": "typable-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React.js prop-types wrapper for easy extraction",
   "main": "typable.js",
   "scripts": {

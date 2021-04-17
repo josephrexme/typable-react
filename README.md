@@ -16,8 +16,12 @@ Type your components like this instead of using propTypes. This will implicitly 
 ```jsx
 import typed from 'typable-react'
 
-export default function MyComponent({ name, bananaCount }) {
-  return <h1>Hello {name}, I ate {bananaCount} bananas</h1>
+export default function MyComponent({
+  name,
+  fruitCount,
+  fruit
+}) {
+  return <h1>Hello {name}, I ate {fruitCount} {fruit}</h1>
 }
 
 typed(MyComponent, {
@@ -26,9 +30,13 @@ typed(MyComponent, {
     required: true,
     description: 'The name to be greeted'
   },
-  bananaCount: {
+  fruitCount: {
     type: typed.number,
-    description: 'The number of bananas I ate'
+    description: 'The number of fruit eaten'
+  },
+  fruit: {
+    type: typed.oneOf(['bananas', 'mangoes']),
+    description: 'The number of fruit eaten'
   },
 })
 ```
@@ -39,15 +47,19 @@ When you need to extract the type metadata for documentation, it's all available
 console.log(MyComponent.types)
 /*
  {
-   name: {
-     type: 'string',
-     required: true,
-     description: 'The name to be greeted'
-   },
-   bananaCount: {
-     type: 'number',
-     description: 'The number of bananas I ate'
-   }
+  name: {
+    type: 'string',
+    required: true,
+    description: 'The name to be greeted'
+  },
+  fruitCount: {
+    type: 'number',
+    description: 'The number of fruit eaten'
+  },
+  fruit: {
+    type: { name: 'oneOf', params: ['bananas', 'mangoes'] },
+    description: 'The number of fruit eaten'
+  },
  }
 */
 ```
