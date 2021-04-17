@@ -1,6 +1,6 @@
 {
   "name": "typable-react",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React.js prop-types wrapper for easy extraction to documentation",
   "main": "typable.js",
   "scripts": {
@@ -9,9 +9,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/josephrexme/typable-react.git"
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com/@josephrexme"
   },
   "keywords": [
     "static",
