@@ -1,5 +1,7 @@
 # Typable React
 
+[![Node.js CI](https://github.com/josephrexme/typable-react/actions/workflows/node.js.yml/badge.svg)](https://github.com/josephrexme/typable-react/actions/workflows/node.js.yml)
+
 PropTypes for documentation authors.
 
 Typable is a [React PropTypes][1] wrapper that allows for easy extraction of your type metadata.
