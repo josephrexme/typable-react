@@ -1,7 +1,7 @@
 # Usage:
 # publish 1.2 "my publish message"
 
-# npm run build
+npm run build
 sed -i "" "3s/: .*/: \"$1\",/" package.json
 git add .
 git commit -m "$2"
