@@ -9,7 +9,7 @@ Typable is a [React PropTypes][1] wrapper that allows for easy extraction of you
 ## Installation
 
 ```sh
-npm i typable-react
+npm i prop-types typable-react
 ```
 
 ## Usage
