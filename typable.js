@@ -1,5 +1,12 @@
 import PropTypes from "prop-types"
-import _mapValues from "lodash/mapValues"
+
+const mapValues = (object, callback) => {
+  const newObject = {}
+  for(let item in object) {
+    newObject[item] = callback(object[item])
+  }
+  return newObject
+}
 
 const basicTypeList = [
   'any',
@@ -72,7 +79,7 @@ export default function typed(component, types) {
         break
       }
       case 'exact': {
-        const propTypedParams = _mapValues(types[propType].type.params, v => toPropTyped(v))
+        const propTypedParams = mapValues(types[propType].type.params, v => toPropTyped(v))
         component.propTypes[propType] = PropTypes.exact(propTypedParams)
         break
       }
@@ -94,7 +101,7 @@ export default function typed(component, types) {
         break
       }
       case 'shape': {
-        const propTypedParams = _mapValues(types[propType].type.params, v => toPropTyped(v))
+        const propTypedParams = mapValues(types[propType].type.params, v => toPropTyped(v))
         component.propTypes[propType] = PropTypes.shape(propTypedParams)
         break
       }
